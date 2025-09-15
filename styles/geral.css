@@ -41,7 +41,7 @@ body {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding: 20px 30px;
+    padding: 35px 30px;
     background-color: #000;
     position: relative;
 }
@@ -209,4 +209,108 @@ body {
     border-top: 1px solid #333;
     color: #888;
     font-size: 14px;
+}
+
+
+/* RESPONSIVIDADE */
+/* RESPONSIVIDADE */
+/* RESPONSIVIDADE */
+/* RESPONSIVIDADE */
+
+@media (max-width: 768px) {
+    .logo {
+        display: flex;
+        position: absolute;
+        top: 25px;
+        left: 20px;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .logo img {
+        width: 130px;
+        height: auto;
+        position: relative;
+        bottom: 30px;
+    }
+
+    .logo h1 {
+        font-size: 20px;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background-color: #111;
+        flex-direction: column;
+        width: 80vw;
+        max-width: 250px;
+        padding: 20px;
+        display: none;
+        border-radius: 10px 0 0 10px;
+        box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+
+    .nav {
+        padding: 10px 0;
+        font-size: 18px;
+    }
+
+    .hamburger {
+        display: flex;
+        position: absolute;
+        top: 25px;
+        right: 30px;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        z-index: 1100;
+    }
+
+    .hamburger span {
+        width: 25px;
+        height: 3px;
+        background: #fff;
+        border-radius: 2px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-section h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+
+    .contact-info p {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav {
+        font-size: 16px;
+    }
+
+    .logo img {
+        width: 130px;
+        position: relative;
+        bottom: 30px;
+    }
+
+    .logo h1 {
+        font-size: 18px;
+    }
 }
