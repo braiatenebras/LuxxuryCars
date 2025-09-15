@@ -1,3 +1,5 @@
+// estilos gerais das pages
+
 // FADE-IN AO SCROLL
 const faders = document.querySelectorAll('.fade-in');
 
