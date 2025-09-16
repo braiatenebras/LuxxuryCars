@@ -3,28 +3,29 @@
     display: flex;
     justify-content: center;
     margin: 20px 0;
-
 }
 
 .group {
+    margin-top: 20px;
     display: flex;
     line-height: 28px;
     align-items: center;
     position: relative;
-    max-width: 800px;
+    width: 55vw;
 }
 
 .input {
     width: 100%;
-    height: 40px;
+    height: 50px;
     line-height: 28px;
     padding: 0 1rem;
     padding-left: 2.5rem;
     border: 2px solid transparent;
     border-radius: 8px;
     outline: none;
-    background-color: #f3f3f4;
-    color: #0d0c22;
+    background-color: #1c1c2e;
+    font-size: 16px;
+    color: white;
     transition: .3s ease;
 }
 
@@ -35,9 +36,8 @@
 .input:focus,
 input:hover {
     outline: none;
-    border-color: rgba(234, 76, 137, 0.4);
-    background-color: #fff;
-    box-shadow: 0 0 0 4px rgb(234 76 137 / 10%);
+    background-color: #8a1d1d;
+    box-shadow: 0 0 0 4px rgba(255, 0, 0, 0.1);
 }
 
 .icon {
@@ -48,7 +48,6 @@ input:hover {
     height: 1rem;
 }
 
-
 h2 {
     text-align: center;
     margin: 40px 0;
@@ -57,13 +56,13 @@ h2 {
 }
 
 span {
-    color: #d85b08;
+    color: rgba(243, 0, 0, 0.849);
     font-weight: bold;
 }
 
 .modelos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
     gap: 40px;
     margin: 50px 20px;
     text-align: center;
@@ -76,6 +75,10 @@ span {
     transition: transform 0.4s ease, box-shadow 0.4s ease;
     overflow: hidden;
     position: relative;
+
+    display: flex;
+    flex-direction: column;
+    min-height: 520px;
 }
 
 .modelo img {
@@ -83,6 +86,7 @@ span {
     border-radius: 20px;
     margin-bottom: 20px;
     transition: transform 0.4s ease;
+    z-index: 1;
 }
 
 .badge {
@@ -95,6 +99,7 @@ span {
     font-size: 14px;
     font-weight: bold;
     border-radius: 5px;
+    z-index: 2;
 }
 
 .modelo h3 {
@@ -109,21 +114,92 @@ span {
     margin-bottom: 15px;
 }
 
+.modelo img:hover {
+    transform: scale(1.05);
+}
+
 .modelo .preco {
     font-size: 20px;
-    color: #f39c12;
+    color: rgb(255, 255, 255);
     font-weight: bold;
+    border-radius: 20px;
+    margin-top: 30px;
+    text-shadow: 0 0 5px rgba(255, 221, 221, 0.6),
+        0 0 10px rgba(255, 203, 203, 0.6),
+        0 0 20px rgba(245, 117, 117, 0.6);
 }
 
 .modelo:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
-    cursor: default;
+    box-shadow: 0 20px 35px rgba(248, 11, 11, 0.6);
 }
 
-/* RESPONSIVIDADE */
-/* RESPONSIVIDADE */
-/* RESPONSIVIDADE */
+/* botao de comprar */
+.btn-buy {
+    margin-top: auto;
+    font-family: inherit;
+    font-size: 15px;
+    display: inline-flex;
+    align-items: center;       /* vertical */
+    justify-content: center;   /* horizontal */
+    gap: 0.6rem;
+    padding: 0.65rem 1rem;
+    padding-left: 0.9rem;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    color: #fff;
+    background: linear-gradient(180deg, #e74c3c 0%, #d63b35 100%);
+    transition: background .18s ease, transform .12s ease, box-shadow .18s ease;
+    box-shadow: 0 6px 18px rgba(231, 76, 60, 0.12);
+}
+
+
+.btn-buy:focus {
+    outline: 3px solid rgba(231, 76, 60, 0.18);
+    outline-offset: 3px;
+}
+
+.btn-icon {
+    width: 20px;
+    height: 20px;
+    flex: 0 0 20px;
+    display: block;
+    transition: transform .35s cubic-bezier(.2, .9, .2, 1);
+    color: white;
+}
+
+.btn-icon path {
+    fill: currentColor;
+}
+
+.btn-text {
+    display: inline-block;
+    font-weight: 700;
+    letter-spacing: .4px;
+    transition: opacity .45s ease, transform .3s ease;
+    color: white;
+}
+
+.btn-buy:hover {
+    background: #8a1d1d;
+    transform: translateY(-2px);
+    box-shadow: 0 18px 40px rgba(138, 29, 29, 0.22);
+}
+
+.btn-buy:hover .btn-icon {
+    transform: translateX(45px) scale(1.12);
+}
+
+.btn-buy:hover .btn-text {
+    opacity: 0;
+    transform: translateX(-6px);
+}
+
+.btn-buy:active {
+    transform: scale(.98);
+}
+
 /* RESPONSIVIDADE */
 @media (max-width: 1024px) {
     .apresentacao img {
@@ -131,18 +207,15 @@ span {
     }
 
     .modelos {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         margin: 20px 10px;
         gap: 20px;
     }
 }
 
 @media (max-width: 768px) {
-
     .modelo {
         max-width: 100%;
         margin: 0 auto;
-
-
     }
 }

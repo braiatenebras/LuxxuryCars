@@ -69,7 +69,7 @@
 }
 
 span {
-    color: #d85b08;
+    color: rgba(248, 11, 11, 0.6);
     font-weight: bold;
 }
 
@@ -102,7 +102,7 @@ span {
     font-size: 50px;
     display: block;
     margin-bottom: 15px;
-    color: #d85b08;
+    color: rgba(248, 11, 11, 0.6);
 }
 
 .beneficio h3 {
@@ -167,8 +167,11 @@ span {
 
 .modelo .preco {
     font-size: 20px;
-    color: #f39c12;
+    color: rgb(255, 255, 255);
     font-weight: bold;
+    border-radius: 20px;
+    margin-top: 30px;
+    text-shadow: 0 0 5px rgba(255, 221, 221, 0.6), 0 0 10px rgba(255, 203, 203, 0.6), 0 0 20px rgba(245, 117, 117, 0.6);
 }
 
 .modelo:hover {
@@ -181,8 +184,6 @@ span {
 /* RESPONSIVIDADE */
 /* RESPONSIVIDADE */
 /* RESPONSIVIDADE */
-
-/* Responsividade */
 @media (max-width: 1024px) {
     .apresentacao img {
         max-width: 500px;
@@ -202,26 +203,6 @@ span {
         max-width: 350px;
     }
 
-    .logo {
-        display: flex;
-        position: absolute;
-        top: 25px;
-        left: 20px;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .logo img {
-        width: 130px;
-        height: auto;
-        position: relative;
-        bottom: 30px;
-    }
-
-    .logo h1 {
-        font-size: 20px;
-    }
-
     .beneficios {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -239,66 +220,6 @@ span {
     .modelo {
         max-width: 100%;
         margin: 0 auto;
-    }
-
-    .navbar {
-        position: absolute;
-        top: 70px;
-        right: 0;
-        background-color: #111;
-        flex-direction: column;
-        width: 80vw;
-        max-width: 250px;
-        padding: 20px;
-        display: none;
-        border-radius: 10px 0 0 10px;
-        box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.5);
-        z-index: 1000;
-    }
-
-    .navbar.active {
-        display: flex;
-    }
-
-    .nav {
-        padding: 10px 0;
-        font-size: 18px;
-    }
-
-    .hamburger {
-        display: flex;
-        position: absolute;
-        top: 25px;
-        right: 30px;
-        flex-direction: column;
-        gap: 5px;
-        cursor: pointer;
-        z-index: 1100;
-    }
-
-    .hamburger span {
-        width: 25px;
-        height: 3px;
-        background: #fff;
-        border-radius: 2px;
-    }
-
-    .footer-container {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .footer-section h4::after {
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    .social-icons {
-        justify-content: center;
-    }
-
-    .contact-info p {
-        justify-content: center;
     }
 }
 
@@ -321,17 +242,4 @@ span {
         font-size: 16px;
     }
 
-    .nav {
-        font-size: 16px;
-    }
-
-    .logo img {
-        width: 130px;
-        position: relative;
-        bottom: 30px;
-    }
-
-    .logo h1 {
-        font-size: 18px;
-    }
 }
