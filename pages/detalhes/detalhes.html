@@ -1,12 +1,15 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luxury Cars </title>
+    <meta name="description" content="Detalhes do produto">
+    <link rel="stylesheet" href="/styles/geral.css">
+    <link rel="stylesheet" href="detalhes.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="../../styles/geral.css">
+    <title id="produto-titulo">Produto - Invencível Gym</title>
 </head>
 
 <body>
@@ -28,10 +31,101 @@
         </div>
     </header>
 
+    <main class="container-produto">
+        <div class="imagem-produto">
+            <img id="produto-imagem" src="" alt="Imagem do produto">
+        </div>
 
+        <div class="info-produto">
+            <span class="vendidos" id="produto-vendidos"></span>
+            <h1 id="produto-nome"></h1>
 
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.15.0/dist/umd/supabase.min.js"></script>
-    <script src="../../js/script.js"></script>
+            <div class="avaliacao">
+                <div class="estrelas" id="produto-avaliacao"></div>
+                <span id="produto-avaliacoes"></span>
+            </div>
+
+            <p class="preco" id="produto-preco"></p>
+
+            <div class="frete">
+                <i class="fas fa-truck"></i>
+                <span>Frete grátis para todo o Brasil</span>
+            </div>
+
+            <p class="descricao" id="produto-descricao"></p>
+
+            <div class="detalhes">
+                <h3>Benefícios:</h3>
+                <ul id="produto-beneficios"></ul>
+            </div>
+
+            <div class="quantidade-container">
+                <label for="quantidade">Quantidade:</label>
+                <div class="quantidade-input">
+                    <button class="qtd-btn menos">-</button>
+                    <input type="number" id="quantidade" value="1" min="1" max="10">
+                    <button class="qtd-btn mais">+</button>
+                </div>
+            </div>
+
+            <button class="btn-comprar">Adicionar ao Carrinho</button>
+        </div>
+    </main>
+
+    <section class="produtos-relacionados">
+        <h2>Produtos Relacionados</h2>
+        <div class="relacionados-container" id="produtos-relacionados">
+        </div>
+    </section>
+
+    <footer class="footer fade-in">
+        <div class="footer-container">
+            <div class="footer-section">
+                <img src="/assets/logo.png" alt="Logo Carros de Luxo">
+                <p>Oferecendo os carros mais exclusivos e luxuosos do mercado, com desempenho incomparável e design
+                    sofisticado.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4>Concessionárias</h4>
+                <ul>
+                    <li><a href="#">Curitiba - PR</a></li>
+                    <li><a href="#">Pato Bragado - PR</a></li>
+                    <li><a href="#">Anta Gorda - RS </a></li>
+                    <li><a href="#">Pintópolis - MG</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Links Rápidos</h4>
+                <ul>
+                    <li><a href="#">Início</a></li>
+                    <li><a href="#">Carros</a></li>
+                    <li><a href="#">Destaques</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Contato</h4>
+                <div class="contact-info">
+                    <p><i class="fas fa-phone"></i> (00) 0000-0000</p>
+                    <p><i class="fas fa-envelope"></i> luxurycontato@gmail.com</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Luxury Cars. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="/js/script.js"></script>
 </body>
 
 </html>
