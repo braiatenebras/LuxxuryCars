@@ -1,4 +1,8 @@
 // estilos gerais das pages
+// Configuração do Supabase com a URL e chave fornecida
+const supabaseUrl = 'https://nwxmubgivfwwqekzzpsw.supabase.co';
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im53eG11YmdpdmZ3d3Fla3p6cHN3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTc5NDI5MDksImV4cCI6MjA3MzUxODkwOX0.vVnC0QGTS7e6JojGCVnkxOerVR4G5uIc0dhB4c0AbSQ'; // Substitua com sua chave
+const supabase = supabase.createClient(supabaseUrl, supabaseKey);
 
 // FADE-IN AO SCROLL
 const faders = document.querySelectorAll('.fade-in');
