@@ -64,8 +64,9 @@
 
 .preco {
     font-size: 28px;
-    color: #FFD700;
+    color: rgb(255, 255, 255);
     font-weight: bold;
+    text-shadow: 0 0 5px rgba(255, 221, 221, 0.6), 0 0 10px rgba(255, 203, 203, 0.6), 0 0 20px rgba(245, 117, 117, 0.6);
 }
 
 .preco-original {
