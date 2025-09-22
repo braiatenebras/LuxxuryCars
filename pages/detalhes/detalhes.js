@@ -1,3 +1,4 @@
+// supabase imports
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 
 const supabaseUrl = "https://nwxmubgivfwwqekzzpsw.supabase.co";
@@ -8,6 +9,7 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 const params = new URLSearchParams(window.location.search);
 const carroId = params.get("id");
 
+// carregar carro
 async function carregarCarro() {
     if (!carroId) {
         console.error("Nenhum ID de carro fornecido na URL.");
@@ -27,14 +29,14 @@ async function carregarCarro() {
 
     document.getElementById("produto-imagem").src = data.imagem_url || "Imagem não carregou";
     document.getElementById("produto-nome").textContent = data.nome || "Produto sem nome";
-    document.getElementById("produto-preco").textContent = data.preco ? `R$ ${data.preco}` : "Preço indisponível";
+    document.getElementById("produto-preco").textContent = formatarPreco(data.preco);
     document.getElementById("produto-descricao").textContent = data.descricao || "Sem descrição disponível";
 
     if (data.vendidos) {
         document.getElementById("produto-vendidos").textContent = `${data.vendidos} vendidos`;
     }
 
-    // Benefícios
+    // benefícios
     const ulBeneficios = document.getElementById("produto-beneficios");
     ulBeneficios.innerHTML = "";
     if (data.beneficios) {
@@ -52,8 +54,19 @@ async function carregarCarro() {
             });
         }
     }
-
+}
+// formatar preço
+function formatarPreco(preco) {
+    if (!preco) return "Preço indisponível";
+    
+    const numero = typeof preco === 'string' ? parseFloat(preco) : preco;
+    
+    return numero.toLocaleString('pt-BR', {
+        style: 'currency',
+        currency: 'BRL',
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+    });
 }
 
-// Inicializa
 carregarCarro();
