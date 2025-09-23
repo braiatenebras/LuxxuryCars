@@ -141,8 +141,10 @@ span {
     font-family: inherit;
     font-size: 15px;
     display: inline-flex;
-    align-items: center;       /* vertical */
-    justify-content: center;   /* horizontal */
+    align-items: center;
+    /* vertical */
+    justify-content: center;
+    /* horizontal */
     gap: 0.6rem;
     padding: 0.65rem 1rem;
     padding-left: 0.9rem;
@@ -199,6 +201,59 @@ span {
 
 .btn-buy:active {
     transform: scale(.98);
+}
+
+/* Estilos para loading e estados */
+.loading {
+    text-align: center;
+    padding: 2rem;
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.sem-resultados,
+.erro {
+    text-align: center;
+    padding: 3rem;
+    grid-column: 1 / -1;
+}
+
+.sem-resultados i,
+.erro i {
+    color: #ccc;
+    margin-bottom: 1rem;
+}
+
+.sem-resultados h3,
+.erro h3 {
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.sem-resultados p {
+    color: #888;
+}
+
+.erro {
+    color: #d32f2f;
+}
+
+.modelo {
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.modelo:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .modelos {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1rem;
+    }
 }
 
 /* RESPONSIVIDADE */
