@@ -20,7 +20,7 @@ async function carregarCarros() {
         const { data, error } = await supabaseClient
             .from("carros")
             .select("*")
-            .order("nome");
+            .order("id");
 
         if (error) {
             throw new Error(`Erro ao carregar carros: ${error.message}`);
