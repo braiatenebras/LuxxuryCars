@@ -31,36 +31,19 @@ async function carregarCarro() {
     document.getElementById("produto-nome").textContent = data.nome || "Produto sem nome";
     document.getElementById("produto-preco").textContent = formatarPreco(data.preco);
     document.getElementById("produto-descricao").textContent = data.descricao || "Sem descrição disponível";
+    document.getElementById("produto-beneficios").textContent = data.beneficios || "Sem benefícios disponíveis";
+
 
     if (data.vendidos) {
         document.getElementById("produto-vendidos").textContent = `${data.vendidos} vendidos`;
-    }
-
-    // benefícios
-    const ulBeneficios = document.getElementById("produto-beneficios");
-    ulBeneficios.innerHTML = "";
-    if (data.beneficios) {
-        if (Array.isArray(data.beneficios)) {
-            data.beneficios.forEach(b => {
-                const li = document.createElement("li");
-                li.textContent = b;
-                ulBeneficios.appendChild(li);
-            });
-        } else if (typeof data.beneficios === "string") {
-            data.beneficios.split(",").forEach(b => {
-                const li = document.createElement("li");
-                li.textContent = b.trim();
-                ulBeneficios.appendChild(li);
-            });
-        }
     }
 }
 // formatar preço
 function formatarPreco(preco) {
     if (!preco) return "Preço indisponível";
-    
+
     const numero = typeof preco === 'string' ? parseFloat(preco) : preco;
-    
+
     return numero.toLocaleString('pt-BR', {
         style: 'currency',
         currency: 'BRL',

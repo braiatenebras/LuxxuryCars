@@ -75,7 +75,6 @@ span {
     transition: transform 0.4s ease, box-shadow 0.4s ease;
     overflow: hidden;
     position: relative;
-
     display: flex;
     flex-direction: column;
     min-height: 520px;
@@ -135,16 +134,13 @@ span {
     box-shadow: 0 20px 35px rgba(248, 11, 11, 0.6);
 }
 
-/* botao de comprar */
 .btn-buy {
     margin-top: auto;
     font-family: inherit;
     font-size: 15px;
     display: inline-flex;
     align-items: center;
-    /* vertical */
     justify-content: center;
-    /* horizontal */
     gap: 0.6rem;
     padding: 0.65rem 1rem;
     padding-left: 0.9rem;
@@ -152,7 +148,7 @@ span {
     border-radius: 14px;
     cursor: pointer;
     color: #fff;
-    background: linear-gradient(180deg, #e74c3c 0%, #d63b35 100%);
+    background: linear-gradient(180deg, #ec1800 0%, #9c2515 100%);
     transition: background .18s ease, transform .12s ease, box-shadow .18s ease;
     box-shadow: 0 6px 18px rgba(231, 76, 60, 0.12);
 }
