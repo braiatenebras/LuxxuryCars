@@ -80,6 +80,19 @@ body {
     transform: translateY(-3px);
 }
 
+.nav-admin {
+    text-decoration: none;
+    padding: 12px 20px;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.nav-admin:hover {
+    transform: translateY(-3px);
+}
+
+
+
 .hamburger {
     display: none;
     flex-direction: column;

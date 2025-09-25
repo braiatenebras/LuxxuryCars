@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Painel Admin - Carros de Luxo">
+    <link rel="stylesheet" href="/styles/geral.css">
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Admin - Carros de Luxo</title>
+</head>
+
+<body>
+    <header class="topo">
+        <div class="logo">
+            <img src="../../assets/logo.png" alt="Logo Carros de Luxo">
+        </div>
+
+        <nav class="navbar" aria-label="Menu principal">
+            <a href="/pages/admin/admin.html" class="nav-admin active"><i class="fa-solid fa-gear"></i></a>
+            <a href="../../index.html" class="nav">Início</a>
+            <a href="/pages/cars/cars.html" class="nav">Carros</a>
+            <a href="#" class="nav">Detalhes</a>
+        </nav>
+
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <main class="admin-container">
+        <div class="admin-header">
+            <h1 class="admin-title">Painel de Admin</h1>
+            <button class="btn-add-car" onclick="adicionarCarro()">
+                <i class="fas fa-plus"></i> Adicionar Carro
+            </button>
+        </div>
+
+        <!-- tabela carros -->
+        <div class="table-container">
+            <table class="cars-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Preço</th>
+                        <th>Imagem</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="carros-tabela">
+                    <!-- preenchido via JS -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- modal edição -->
+        <div id="modal-edicao" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 id="modal-title">Editar Carro</h2>
+                    <button class="modal-close" onclick="fecharModal()">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="edit-nome">Nome do Carro</label>
+                        <input id="edit-nome" class="form-input" placeholder="Ex: Ferrari F8 Tributo">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="edit-preco">Preço (R$)</label>
+                        <input id="edit-preco" type="number" class="form-input" placeholder="Ex: 2500000">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="edit-descricao">Descrição</label>
+                        <textarea id="edit-descricao" class="form-textarea" placeholder="Descrição detalhada do carro"
+                            rows="3"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="edit-beneficios">Benefícios</label>
+                        <textarea id="edit-beneficios" class="form-textarea"
+                            placeholder="Lista de benefícios separados por vírgula" rows="2"></textarea>
+                    </div>
+
+                    <div class="images-section">
+                        <h3>Imagens do Carro</h3>
+                        <div class="form-group">
+                            <label for="edit-imagem1">Imagem Principal (URL)</label>
+                            <input id="edit-imagem1" class="form-input" placeholder="https://exemplo.com/imagem1.jpg">
+                        </div>
+                        <div class="form-group">
+                            <label for="edit-imagem2">Imagem 2 (URL)</label>
+                            <input id="edit-imagem2" class="form-input" placeholder="https://exemplo.com/imagem2.jpg">
+                        </div>
+                        <div class="form-group">
+                            <label for="edit-imagem3">Imagem 3 (URL)</label>
+                            <input id="edit-imagem3" class="form-input" placeholder="https://exemplo.com/imagem3.jpg">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button id="btn-excluir" class="btn-danger" onclick="excluirCarro()">
+                        <i class="fas fa-trash"></i> Excluir
+                    </button>
+                    <div class="footer-actions">
+                        <button id="btn-cancelar" class="btn-secondary" onclick="fecharModal()">
+                            Cancelar
+                        </button>
+                        <button id="btn-salvar" class="btn-primary">
+                            <i class="fas fa-save"></i> Salvar Alterações
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer fade-in">
+        <div class="footer-container">
+            <div class="footer-section">
+                <img src="/assets/logo.png" alt="Logo Carros de Luxo">
+                <p>Oferecendo os carros mais exclusivos e luxuosos do mercado, com desempenho incomparável e design
+                    sofisticado.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4>Concessionárias</h4>
+                <ul>
+                    <li><a href="#">Curitiba - PR</a></li>
+                    <li><a href="#">Pato Bragado - PR</a></li>
+                    <li><a href="#">Anta Gorda - RS </a></li>
+                    <li><a href="#">Pintópolis - MG</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Links Rápidos</h4>
+                <ul>
+                    <li><a href="#">Início</a></li>
+                    <li><a href="#">Carros</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Contato</h4>
+                <div class="contact-info">
+                    <p><i class="fas fa-phone"></i> (00) 0000-0000</p>
+                    <p><i class="fas fa-envelope"></i> luxurycontato@gmail.com</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Luxury Cars. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="/js/script.js"></script>
+    <script src="admin.js" type="module"></script>
+</body>
+
+</html>
