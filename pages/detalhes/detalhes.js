@@ -30,13 +30,16 @@ async function carregarCarro() {
     document.getElementById("produto-imagem").src = data.imagem_url || "Imagem não carregou";
     document.getElementById("produto-imagem2").src = data.imagem_url2 || "Imagem não carregou";
     document.getElementById("produto-imagem3").src = data.imagem_url3 || "Imagem não carregou";
-    document.getElementById("miniatura1").src = data.imagem_url || "Imagem não carregou";
-    document.getElementById("miniatura2").src = data.imagem_url2 || "Imagem não carregou";
-    document.getElementById("miniatura3").src = data.imagem_url3 || "Imagem não carregou";
+    document.getElementById("produto-mini1").src = data.imagem_url || "Imagem não carregou";
+    document.getElementById("produto-mini2").src = data.imagem_url2 || "Imagem não carregou";
+    document.getElementById("produto-mini3").src = data.imagem_url3 || "Imagem não carregou";
 
     document.getElementById("produto-nome").textContent = data.nome || "Produto sem nome";
+
     document.getElementById("produto-preco").textContent = formatarPreco(data.preco);
+
     document.getElementById("produto-descricao").textContent = data.descricao || "Sem descrição disponível";
+
     document.getElementById("produto-beneficios").textContent = data.beneficios || "Sem benefícios disponíveis";
 
 
@@ -62,7 +65,6 @@ carregarCarro();
 
 
 document.addEventListener('DOMContentLoaded', function () {
-    // Elementos do slideshow
     const slides = document.querySelectorAll('.slide-principal');
     const miniaturas = document.querySelectorAll('.miniatura');
     const indicadores = document.querySelectorAll('.indicador');
@@ -72,14 +74,11 @@ document.addEventListener('DOMContentLoaded', function () {
     let currentSlide = 0;
     let slideInterval;
 
-    // Função para mostrar slide específico
     function showSlide(index) {
-        // Remove classe active de todos os slides
         slides.forEach(slide => slide.classList.remove('active'));
         miniaturas.forEach(min => min.classList.remove('active'));
         indicadores.forEach(ind => ind.classList.remove('active'));
 
-        // Adiciona classe active ao slide atual
         slides[index].classList.add('active');
         miniaturas[index].classList.add('active');
         indicadores[index].classList.add('active');
@@ -87,32 +86,27 @@ document.addEventListener('DOMContentLoaded', function () {
         currentSlide = index;
     }
 
-    // Próximo slide
     function nextSlide() {
         let next = currentSlide + 1;
         if (next >= slides.length) next = 0;
         showSlide(next);
     }
 
-    // Slide anterior
     function prevSlide() {
         let prev = currentSlide - 1;
         if (prev < 0) prev = slides.length - 1;
         showSlide(prev);
     }
 
-    // Event listeners
     btnNext.addEventListener('click', nextSlide);
     btnPrev.addEventListener('click', prevSlide);
 
-    // Miniaturas - clique para navegar
     miniaturas.forEach((miniatura, index) => {
         miniatura.addEventListener('click', () => {
             showSlide(index);
         });
     });
 
-    // Indicadores - clique para navegar
     indicadores.forEach((indicador, index) => {
         indicador.addEventListener('click', () => {
             showSlide(index);
@@ -128,12 +122,10 @@ document.addEventListener('DOMContentLoaded', function () {
         clearInterval(slideInterval);
     }
 
-    // Pausa o slideshow quando o mouse está sobre as imagens
     const slideshowContainer = document.querySelector('.slideshow-container');
     slideshowContainer.addEventListener('mouseenter', stopSlideShow);
     slideshowContainer.addEventListener('mouseleave', startSlideShow);
 
-    // Inicia o slideshow
     startSlideShow();
     showSlide(0);
 });
