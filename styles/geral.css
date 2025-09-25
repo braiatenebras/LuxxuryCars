@@ -82,7 +82,6 @@ body {
 
 .nav-admin {
     text-decoration: none;
-    padding: 12px 20px;
     color: #fff;
     transition: all 0.3s ease;
 }
@@ -90,7 +89,6 @@ body {
 .nav-admin:hover {
     transform: translateY(-3px);
 }
-
 
 
 .hamburger {
